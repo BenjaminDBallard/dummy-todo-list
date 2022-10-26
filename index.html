@@ -8,12 +8,20 @@
     <title>Document</title>
   </head>
   <body>
-    <button onclick="fetchTodos()">Fetch Todos</button>
-    <button onclick="logTodos()">Log Todos</button>
-    <button onclick="populateTodos()">Populate Todos</button>
-    <ol id="todo-list">
-      <!-- LIs will go here -->
-    </ol>
+    <section class="container">
+      <div class="button-box">
+        <button class="btn" onclick="fetchTodos()">Fetch Todos</button>
+        <button class="btn" onclick="logTodos()">Log Todos</button>
+        <button class="btn" onclick="populateTodos()">Populate Todos</button>
+      </div>
+    </section>
+    <section class="list">
+      <h1 class="title">TODO LIST:</h1>
+      <hr />
+      <ol id="todo-list">
+        <!-- LIs will go here -->
+      </ol>
+    </section>
     <script src="todo.js"></script>
   </body>
 </html>
