@@ -17,6 +17,13 @@
     </section>
     <section class="list">
       <h1 class="title">TODO LIST:</h1>
+      <div class="formGroup">
+        <label for="userId">UserId</label>
+        <input id="userId" type="number" min="1" max="10" />
+        <button onclick="filterTodos(filteredTodos)">Filter Todos</button>
+        <button onclick="filterTodos(complete)">Completed</button>
+        <button onclick="filterTodos(incomplete)">Incomplete</button>
+      </div>
       <hr />
       <ol id="todo-list">
         <!-- LIs will go here -->
