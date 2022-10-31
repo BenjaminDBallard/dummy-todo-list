@@ -20,14 +20,16 @@
       <div class="formGroup">
         <label for="userId">UserId</label>
         <input id="userId" type="number" min="1" max="10" />
-        <button onclick="filterTodos(filteredTodos)">Filter Todos</button>
-        <button onclick="filterTodos(complete)">Completed</button>
-        <button onclick="filterTodos(incomplete)">Incomplete</button>
+        <button onclick="filterTodos()">Filter Todos</button>
+        <button onclick="completed()">Completed</button>
+        <button onclick="incompleted()">Incomplete</button>
       </div>
       <hr />
-      <ol id="todo-list">
-        <!-- LIs will go here -->
-      </ol>
+      <div id="list-container">
+        <ol id="todo-list">
+          <!-- LIs will go here -->
+        </ol>
+      </div>
     </section>
     <script src="todo.js"></script>
   </body>
