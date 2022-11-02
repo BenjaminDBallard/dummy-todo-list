@@ -72,11 +72,7 @@ const filterTodos = () => {
   });
   console.log("fliteredTodos:", filteredTodos);
 
-  for (let i = 0; i < filteredTodos.length; i++) {
-    let newListItem = document.createElement("LI");
-    newListItem.innerText = filteredTodos[i].title;
-    ol.appendChild(newListItem);
-  }
+  updateList(filteredTodos);
 };
 
 const completed = () => {
@@ -88,11 +84,7 @@ const completed = () => {
   });
   console.log("complete:", complete);
 
-  for (let i = 0; i < complete.length; i++) {
-    let newListItem = document.createElement("LI");
-    newListItem.innerText = complete[i].title;
-    ol.appendChild(newListItem);
-  }
+  updateList(complete);
 };
 
 const incompleted = () => {
@@ -104,9 +96,13 @@ const incompleted = () => {
   });
   console.log("Incomplete:", incomplete);
 
-  for (let i = 0; i < incomplete.length; i++) {
+  updateList(incomplete);
+};
+
+function updateList(filt) {
+  for (let i = 0; i < filt.length; i++) {
     let newListItem = document.createElement("LI");
-    newListItem.innerText = incomplete[i].title;
+    newListItem.innerText = filt[i].title;
     ol.appendChild(newListItem);
   }
-};
+}
