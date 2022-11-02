@@ -58,48 +58,30 @@ const populateTodos = () => {
 //filter ------------------------------------------------
 
 const filterTodos = () => {
-  clearList();
-
   let userIdElement = document.getElementById("userId");
-  console.log("userIdElement:", userIdElement);
-
   let userIdValue = userIdElement.value;
-  console.log("userIdValue:", userIdValue);
-
-  let filteredTodos = arrayOfTodos.filter((todo) => {
-    console.log(todo.userId == userIdValue);
+  filterAndUpdateList((todo) => {
     return todo.userId == userIdValue;
   });
-  console.log("fliteredTodos:", filteredTodos);
-
-  updateList(filteredTodos);
 };
 
 const completed = () => {
-  clearList();
-
-  let complete = arrayOfTodos.filter((todo) => {
-    console.log(todo.completed == true);
+  filterAndUpdateList((todo) => {
     return todo.completed == true;
   });
-  console.log("complete:", complete);
-
-  updateList(complete);
 };
 
 const incompleted = () => {
-  clearList();
-
-  let incomplete = arrayOfTodos.filter((todo) => {
-    console.log(todo.completed == false);
+  filterAndUpdateList((todo) => {
     return todo.completed == false;
   });
-  console.log("Incomplete:", incomplete);
-
-  updateList(incomplete);
 };
 
-function updateList(filt) {
+// UPDATE LIST FUNC -----------------------------------------
+
+function filterAndUpdateList(listFilter) {
+  clearList();
+  let filt = arrayOfTodos.filter(listFilter);
   for (let i = 0; i < filt.length; i++) {
     let newListItem = document.createElement("LI");
     newListItem.innerText = filt[i].title;
